@@ -18,7 +18,7 @@
 <meta property="og:description" content="一、 什么是BFC 块级格式化上下文，Block Formatting Context，也就是常说的BFC，它是Web页面的可视化CSS渲染区域的一部分，是布局过程中生成块级盒子的区域，也是浮动元素与其他元素的交互限定区域。BFC的布局规则如下：  内部的盒子会在垂直方向，一个一个地放置 BFC是页面上的一个隔离的独立容器 属于同一个BFC的两个相邻Box的上下margin会发生重叠 计算BFC的">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2018/03/30/总结块级格式化上下文-BFC/margin折叠1.png">
-<meta property="og:updated_time" content="2018-03-30T11:37:09.172Z">
+<meta property="og:updated_time" content="2018-03-30T11:37:31.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="总结块级格式化上下文(BFC)">
 <meta name="twitter:description" content="一、 什么是BFC 块级格式化上下文，Block Formatting Context，也就是常说的BFC，它是Web页面的可视化CSS渲染区域的一部分，是布局过程中生成块级盒子的区域，也是浮动元素与其他元素的交互限定区域。BFC的布局规则如下：  内部的盒子会在垂直方向，一个一个地放置 BFC是页面上的一个隔离的独立容器 属于同一个BFC的两个相邻Box的上下margin会发生重叠 计算BFC的">
@@ -193,14 +193,14 @@
 <li>弹性元素(<code>display</code>为<code>flex</code>或<code>inline-flex</code>元素的直接子元素)</li>
 <li>网格元素(<code>display</code>为<code>grid</code>或<code>inline-grid</code>元素的直接子元素)</li>
 <li>多列容器（元素的<code>colunm-count</code>或<code>column-width</code>不为<code>auto</code>，包括<code>column-count</code>为1）</li>
-<li><code>column-span</code>为<code>all</code>的元素始终会创建一个新的BFC，即使该元素没有包裹在一个多列容器当中<h2 id="二、BFC的特性及应用"><a href="#二、BFC的特性及应用" class="headerlink" title="二、BFC的特性及应用"></a>二、BFC的特性及应用</h2><strong>两个相邻的普通流中的块元素垂直方向的margin会发生折叠</strong></li>
+<li><code>column-span</code>为<code>all</code>的元素始终会创建一个新的BFC，即使该元素没有包裹在一个多列容器当中<h2 id="二、BFC的特性及应用"><a href="#二、BFC的特性及应用" class="headerlink" title="二、BFC的特性及应用"></a>二、BFC的特性及应用</h2><strong> 两个相邻的普通流中的块元素垂直方向的margin会发生折叠</strong></li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">  &lt;style&gt;</span><br><span class="line">    .p&#123;</span><br><span class="line">      height: 50px;</span><br><span class="line">      width: 200px;</span><br><span class="line">      margin: 50px 0;</span><br><span class="line">      background: tomato;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;h1&gt;1.两个相邻的普通流中的块元素垂直方向上的margin会折叠&lt;/h1&gt;</span><br><span class="line">  &lt;div class=&quot;p&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;p&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 <p><img src="/2018/03/30/总结块级格式化上下文-BFC/margin折叠1.png" alt="上下margin折叠"><img src="/2018/03/30/总结块级格式化上下文-BFC/margin折叠2.png" alt="上下margin折叠"></p>
 <p>之所以会发生这样的情况是因为根据BFC布局规则中所述，位于同一个BFC中的相邻两个盒子之间的上下margin会发生折叠。<br>如果我们想阻止这种情况发生，很容易想到只要让两者位于不同的BFC当中就可以做到了，比如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">  &lt;style&gt;</span><br><span class="line">    .p&#123;</span><br><span class="line">      height: 50px;</span><br><span class="line">      width: 200px;</span><br><span class="line">      margin: 50px 0;</span><br><span class="line">      background: tomato;</span><br><span class="line">    &#125;</span><br><span class="line">    .wrap&#123;</span><br><span class="line">      overflow: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=&quot;p&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;wrap&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;p&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 <p><img src="/2018/03/30/总结块级格式化上下文-BFC/margin折叠3.png" alt="阻止margin折叠"></p>
-<p><strong>BFC可以包含浮动的元素</strong><br>我们都知道在正常的情况下，浮动元素会脱离普通文档流，所以会有下面的代码</p>
+<p><strong> BFC可以包含浮动的元素</strong><br>我们都知道在正常的情况下，浮动元素会脱离普通文档流，所以会有下面的代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;border:1px solid #000000&quot;&gt;</span><br><span class="line">    &lt;div style=&quot;width:100px;height:100px;background-color:gray;float: left;&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <p>会导致父元素塌陷这样的效果：<br><img src="/2018/03/30/总结块级格式化上下文-BFC/浮动导致父元素塌陷.png" alt="浮动导致父元素塌陷"></p>
 <p>外面的div无法包含内部的div，但是如果我们触发外部容器的BFC，根据BFC布局规则，计算BFC高度时，浮动元素也要参与在内，那么外部容器将会包裹着浮动元素，通过这样的方式达到阻止父元素塌陷的效果。我们用最简单的触发BFC的方式，将容器元素的overflow属性值设为非<code>visible</code>。</p>
@@ -216,7 +216,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2018/03/30/总结块级格式化上下文-BFC/" data-id="cjfdvia6l0000rsvz78d0kfem" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/03/30/总结块级格式化上下文-BFC/" data-id="cjfdvis4w0000ysvz5afvqjwi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
