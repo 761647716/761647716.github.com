@@ -3,28 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Hello World | 白日梦先生的博客</title>
+    <title>总结块级格式化上下文(BFC) | 白日梦先生的博客</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="" />
+        <meta name="keywords" content="CSS,前端" />
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="keywords" content="HTML5,CSS3,JavaScript,TypeScript,React,Vue,Angular">
+    <meta name="description" content="块级格式化上下文，Block Formatting Context，也就是常说的BFC，它是Web页面的可视化CSS渲染区域的一部分，是布局过程中生成块级盒子的区域，也是浮动元素与其他元素的交互限定区域（也就是说BFC中的浮动元素不会对BFC外的其他元素产生影响）。下列方式会创建BFC：  根元素或包含根元素的元素 浮动元素（元素的position为absolute或fixed） 行内块元素（元">
+<meta name="keywords" content="CSS,前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/03/29/hello-world/index.html">
+<meta property="og:title" content="总结块级格式化上下文(BFC)">
+<meta property="og:url" content="http://yoursite.com/2018/03/30/总结块级格式化上下文-BFC/index.html">
 <meta property="og:site_name" content="白日梦先生的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="块级格式化上下文，Block Formatting Context，也就是常说的BFC，它是Web页面的可视化CSS渲染区域的一部分，是布局过程中生成块级盒子的区域，也是浮动元素与其他元素的交互限定区域（也就是说BFC中的浮动元素不会对BFC外的其他元素产生影响）。下列方式会创建BFC：  根元素或包含根元素的元素 浮动元素（元素的position为absolute或fixed） 行内块元素（元">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-29T08:52:07.319Z">
+<meta property="og:updated_time" content="2018-03-30T09:21:13.615Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="总结块级格式化上下文(BFC)">
+<meta name="twitter:description" content="块级格式化上下文，Block Formatting Context，也就是常说的BFC，它是Web页面的可视化CSS渲染区域的一部分，是布局过程中生成块级盒子的区域，也是浮动元素与其他元素的交互限定区域（也就是说BFC中的浮动元素不会对BFC外的其他元素产生影响）。下列方式会创建BFC：  根元素或包含根元素的元素 浮动元素（元素的position为absolute或fixed） 行内块元素（元">
     
 
-    
-        <link rel="alternate" href="/" title="白日梦先生的博客" type="application/atom+xml" />
     
 
     
@@ -74,7 +72,7 @@
                                     <a class="main-nav-list-link" href="/">主页</a>
                                 </li>
                             
-                                        
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/学习笔记/">学习笔记</a></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">关于</a>
@@ -133,18 +131,18 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    未分类
+    <a class="page-title-link" href="/categories/学习笔记/">学习笔记</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-hello-world" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-总结块级格式化上下文-BFC" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Hello World
+        总结块级格式化上下文(BFC)
         </h1>
     
 
@@ -154,25 +152,39 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/03/29/hello-world/" class="article-date">
-            <time datetime="2018-03-29T08:52:07.319Z" itemprop="datePublished">2018-03-29</time>
+        <a href="/2018/03/30/总结块级格式化上下文-BFC/" class="article-date">
+            <time datetime="2018-03-30T05:39:17.000Z" itemprop="datePublished">2018-03-30</time>
         </a>
     </div>
 
                 
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/前端/">前端</a>
+    </div>
+
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <p><strong> 块级格式化上下文</strong>，Block Formatting Context，也就是常说的BFC，它是Web页面的可视化CSS渲染区域的一部分，是布局过程中生成块级盒子的区域，也是浮动元素与其他元素的交互限定区域（也就是说BFC中的浮动元素不会对BFC外的其他元素产生影响）。<br>下列方式会创建BFC：</p>
+<ul>
+<li>根元素或包含根元素的元素</li>
+<li>浮动元素（元素的<code>position</code>为<code>absolute</code>或<code>fixed</code>）</li>
+<li>行内块元素（元素的<code>display</code>为<code>inline-block</code>）</li>
+<li>表格单元格（元素的<code>display</code>为<code>table-cell</code>，HTML表格单元格默认为该值）</li>
+<li>表格标题（元素的<code>display</code>为<code>table-caption</code>，HTML表格标题默认为该值）</li>
+<li>匿名表格单元格元素(元素的<code>display</code>为<code>table</code>、<code>table-row</code>、<code>table-row-group</code>、<code>table-header-group</code>、<code>table-footer-group</code>（分别是HTML table、row、tbody、thead、tfoot的默认属性）或inline-table)</li>
+<li><code>overflow</code>的值不为<code>visible</code>的元素</li>
+<li><code>display</code>值为<code>flow-root</code>的元素</li>
+<li><code>contain</code>值为<code>layout</code>、<code>content</code>或<code>strict</code>的元素</li>
+<li>弹性元素(<code>display</code>为<code>flex</code>或<code>inline-flex</code>元素的直接子元素)</li>
+<li>网格元素(<code>display</code>为<code>grid</code>或<code>inline-grid</code>元素的直接子元素)</li>
+<li>多列容器（元素的<code>colunm-count</code>或<code>column-width</code>不为<code>auto</code>，包括<code>column-count</code>为1）</li>
+<li><code>column-span</code>为<code>all</code>的元素始终会创建一个新的BFC，即使该元素没有包裹在一个多列容器当中</li>
+</ul>
+<p>创建了BFC的元素中的所有内容都会被包含在该BFC中</p>
+<p>BFC对浮动定位与清除浮动都很重要。浮动定位和清除浮动时只会应用同一个BFC内的元素。浮动不会影响其他BFC中元素的布局，而清除浮动只能清除同一BFC中在他前面的元素的浮动。外边距折叠也只会发生在属于同一BFC的块级元素之间。</p>
 
         </div>
         <footer class="article-footer">
@@ -180,7 +192,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2018/03/29/hello-world/" data-id="cjfdh9eek0000nwvzryboavjl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/03/30/总结块级格式化上下文-BFC/" data-id="cjfdqop480000bcvzwmsqcz8k" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -271,22 +283,6 @@
                 </li>
                 
             
-                
-                <li>
-                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
-                        <i class="icon fa fa-weibo"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="rss" href="/" target="_blank">
-                        <i class="icon fa fa-rss"></i>
-                    </a>
-                </li>
-                
-            
         </ul>
     </div>
     
@@ -307,7 +303,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/03/29/hello-world/" class="thumbnail">
+                            <a href="/2018/03/30/总结块级格式化上下文-BFC/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -318,9 +314,9 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/03/29/hello-world/" class="title">Hello World</a></p>
-                            <p class="item-date"><time datetime="2018-03-29T08:52:07.319Z" itemprop="datePublished">2018-03-29</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/学习笔记/">学习笔记</a></p>
+                            <p class="item-title"><a href="/2018/03/30/总结块级格式化上下文-BFC/" class="title">总结块级格式化上下文(BFC)</a></p>
+                            <p class="item-date"><time datetime="2018-03-30T05:39:17.000Z" itemprop="datePublished">2018-03-30</time></p>
                         </div>
                     </li>
                 
@@ -330,6 +326,13 @@
 
             
                 
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/学习笔记/">学习笔记</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
 
             
                 
@@ -343,9 +346,23 @@
 
             
                 
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
 
             
                 
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a>
+        </div>
+    </div>
+
 
             
                 
@@ -390,7 +407,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://yoursite.com/2018/03/29/hello-world/';
+    var disqus_url = 'http://yoursite.com/2018/03/30/总结块级格式化上下文-BFC/';
     
     (function() {
     var dsq = document.createElement('script');
